@@ -16,6 +16,8 @@
 		47BFD45C2B7D72580092D56E /* AppProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD45B2B7D72580092D56E /* AppProjectUITestsLaunchTests.swift */; };
 		47BFD4722B84279F0092D56E /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD4712B84279F0092D56E /* HomeScene.swift */; };
 		47BFD4762B842E2C0092D56E /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD4752B842E2C0092D56E /* OptionsView.swift */; };
+		47BFD47A2B843E540092D56E /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD4792B843E540092D56E /* OptionsScene.swift */; };
+		47BFD47C2B84403D0092D56E /* CalandarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD47B2B84403D0092D56E /* CalandarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		47BFD45B2B7D72580092D56E /* AppProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		47BFD4712B84279F0092D56E /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		47BFD4752B842E2C0092D56E /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		47BFD4792B843E540092D56E /* OptionsScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
+		47BFD47B2B84403D0092D56E /* CalandarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalandarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				47BFD4402B7D72560092D56E /* ContentView.swift */,
 				47BFD4712B84279F0092D56E /* HomeScene.swift */,
 				47BFD4752B842E2C0092D56E /* OptionsView.swift */,
+				47BFD4792B843E540092D56E /* OptionsScene.swift */,
+				47BFD47B2B84403D0092D56E /* CalandarView.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
 			);
@@ -265,7 +271,9 @@
 			files = (
 				47BFD4722B84279F0092D56E /* HomeScene.swift in Sources */,
 				47BFD4412B7D72560092D56E /* ContentView.swift in Sources */,
+				47BFD47C2B84403D0092D56E /* CalandarView.swift in Sources */,
 				47BFD43F2B7D72560092D56E /* AppProjectApp.swift in Sources */,
+				47BFD47A2B843E540092D56E /* OptionsScene.swift in Sources */,
 				47BFD4762B842E2C0092D56E /* OptionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ import UserNotifications
 
 struct ContentView: View {
     @State var showingOptions = false
-    @State var showingProfile = false
+    @State var showingCal = false
     @State private var OptionsName: String = "Options"
     @State var selectedDate: Date = Date()
     func toggleOptionsName() {
@@ -28,24 +28,14 @@ struct ContentView: View {
                 }
                 .padding([.leading, .bottom])
                 Spacer()
-                
-            }
-            VStack() {
-                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
-                    .padding(.all)
-                    .datePickerStyle(.graphical)
-                
-                Text(selectedDate.formatted(date: .abbreviated, time: .shortened))
-                    .font(.system(size: 24))
-                    .bold()
-                    .padding()
-                    .animation(.spring(), value: selectedDate)
-                    .frame(width: 500)
-               //Divider()
             }
             
-           
-            if(showingOptions == true){OptionsView()}
+            if(showingOptions == true){
+                OptionsView()
+            }
+            else{
+               CalandarView()
+            }
 
         }
         Spacer()
