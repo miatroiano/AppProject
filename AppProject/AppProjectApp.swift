@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct AppProjectApp: App {
+   // @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
+    
     var body: some Scene {
             HomeScene()
     }
