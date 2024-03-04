@@ -35,17 +35,22 @@ struct CalandarView: View {
                         content.subtitle = "Wake Up!"
                         content.interruptionLevel = .critical
                         content.sound = UNNotificationSound.criticalSoundNamed(UNNotificationSoundName("alert.caf"))
+                    
 
-                        content.sound = UNNotificationSound.default
                            
                     let pickTime = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: DatePicked)
                                    
                     let trigger = UNCalendarNotificationTrigger(dateMatching: pickTime, repeats: false)
+                //    let wakeButton = UNNotificationAction(identifier: "ACCEPT_ACTION",
+                                                           //title: "Accept",
+                                       //                    options: [])
                             
+                 //   let category = UNNotificationCategory(identifier: "alarm", actions: [wakeButton], intentIdentifiers: [])
+                    
                     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                             
-                        UNUserNotificationCenter.current().add(request)
-                        }.font(.title)
+                    UNUserNotificationCenter.current().add(request)
+                }.font(.title)
                         
             
             .padding()

@@ -34,7 +34,8 @@ struct ContentView: View {
                 OptionsView()
             }
             else{
-               CalandarView()
+                MapView()
+               //CalandarView()
             }
 
         }
