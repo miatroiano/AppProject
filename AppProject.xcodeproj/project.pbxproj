@@ -20,6 +20,7 @@
 		47BFD47C2B84403D0092D56E /* CalandarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD47B2B84403D0092D56E /* CalandarView.swift */; };
 		47BFD47E2B8AC2220092D56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD47D2B8AC2220092D56E /* AppDelegate.swift */; };
 		47BFD4802B8D4E0C0092D56E /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD47F2B8D4E0C0092D56E /* MapView.swift */; };
+		47BFD4872B96875A0092D56E /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD4862B96875A0092D56E /* Searchbar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		47BFD47D2B8AC2220092D56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		47BFD47F2B8D4E0C0092D56E /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		47BFD4852B9682100092D56E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		47BFD4862B96875A0092D56E /* Searchbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchbar.swift; sourceTree = "<group>"; };
+		47D83A2D2B9928170038A862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		47BFD43D2B7D72560092D56E /* AppProject */ = {
 			isa = PBXGroup;
 			children = (
+				47D83A2D2B9928170038A862 /* Info.plist */,
 				47BFD43E2B7D72560092D56E /* AppProjectApp.swift */,
 				47BFD4402B7D72560092D56E /* ContentView.swift */,
 				47BFD4712B84279F0092D56E /* HomeScene.swift */,
@@ -115,6 +119,7 @@
 				47BFD47B2B84403D0092D56E /* CalandarView.swift */,
 				47BFD47D2B8AC2220092D56E /* AppDelegate.swift */,
 				47BFD47F2B8D4E0C0092D56E /* MapView.swift */,
+				47BFD4862B96875A0092D56E /* Searchbar.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
 				47BFD4852B9682100092D56E /* README.md */,
@@ -282,6 +287,7 @@
 				47BFD4412B7D72560092D56E /* ContentView.swift in Sources */,
 				47BFD47C2B84403D0092D56E /* CalandarView.swift in Sources */,
 				47BFD43F2B7D72560092D56E /* AppProjectApp.swift in Sources */,
+				47BFD4872B96875A0092D56E /* Searchbar.swift in Sources */,
 				47BFD47E2B8AC2220092D56E /* AppDelegate.swift in Sources */,
 				47BFD47A2B843E540092D56E /* OptionsScene.swift in Sources */,
 				47BFD4762B842E2C0092D56E /* OptionsView.swift in Sources */,
@@ -451,6 +457,7 @@
 				DEVELOPMENT_TEAM = A6LH6T8YU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -480,6 +487,7 @@
 				DEVELOPMENT_TEAM = A6LH6T8YU2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AppProject/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

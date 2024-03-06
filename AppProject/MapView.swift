@@ -10,6 +10,11 @@ import SwiftUI
 import UserNotifications
 import MapKit
 
+extension CLLocationCoordinate2D{
+    static let home = CLLocationCoordinate2D(latitude: 41.308273, longitude: -72.927887)
+    static let school = CLLocationCoordinate2D(latitude: 41.421440, longitude: -72.894005)
+}
+
 struct MapView: View {
     @State private var searchResults: [MKMapItem] = []
     @State private var searchInput: String = ""
@@ -17,7 +22,7 @@ struct MapView: View {
     func search(for querey: String){
         let request = MKLocalSearch.Request()
         request.resultTypes = .pointOfInterest
-        //result.region = MKCoordinateRegion()
+        request.region = MKCoordinateRegion(center: .home, span: MKCoordinateSpan(latitudeDelta: 0.0125, longitudeDelta: 0.0125) )
         
         Task{
             let search = MKLocalSearch(request: request)
@@ -27,21 +32,17 @@ struct MapView: View {
     }
     
     var body: some View {
-        
-        
-        VStack {
-            TextField(
-                "Search for a Location",
-                text: $searchInput
-            )
-        }
-        .textFieldStyle(.roundedBorder)
         Map{
+            
             ForEach(searchResults, id: \.self)
             {result in Marker(item: result)}
         }
         
-    
+        HStack{
+            Spacer()
+            Searchbar(searchResults: $searchResults)
+                .padding(.top)
+        }
     }
     
 }
