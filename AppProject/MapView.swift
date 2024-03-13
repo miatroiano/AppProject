@@ -18,7 +18,10 @@ extension CLLocationCoordinate2D{
 struct MapView: View {
     @State private var searchResults: [MKMapItem] = []
     @State private var searchInput: String = ""
-    
+    @State var region = MapCameraPosition.region(MKCoordinateRegion(
+        center: .home,
+        span: .init(latitudeDelta: 0.2, longitudeDelta: 0.2))
+    )
     func search(for querey: String){
         let request = MKLocalSearch.Request()
         request.resultTypes = .pointOfInterest
@@ -31,11 +34,20 @@ struct MapView: View {
         }
     }
     
+    
     var body: some View {
-        Map{
-            
+            Map(
+                position: $region,bounds: nil, interactionModes: .all, scope: nil
+            ){
+                
             ForEach(searchResults, id: \.self)
             {result in Marker(item: result)}
+        }
+       
+        .mapControls {
+            MapUserLocationButton()
+            MapCompass()
+            MapScaleView()
         }
         
         HStack{
@@ -43,8 +55,9 @@ struct MapView: View {
             Searchbar(searchResults: $searchResults)
                 .padding(.top)
         }
+        
     }
-    
+
 }
 
 #Preview {

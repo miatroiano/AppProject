@@ -42,7 +42,7 @@ struct Searchbar: View {
             Button{
                 search(for: searchInput)
             } label:{
-                Label("search bar", systemImage: "multiply.circle.fill")
+                Label("search", systemImage: "magnifyingglass")
             }
             .buttonStyle(.borderedProminent)
         }
