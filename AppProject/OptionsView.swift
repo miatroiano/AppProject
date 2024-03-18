@@ -18,9 +18,9 @@ struct OptionsView: View {
         VStack() {
              NavigationView {
                     List{
-                        NavigationLink(destination: Text("details 1"),
+                        NavigationLink(destination: CalandarView(),
                                        label: {
-                            Text("Profile")
+                            Text("Set Alarm")
                         })
                         NavigationLink(destination: Text("details 2"),
                                        label: {
