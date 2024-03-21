@@ -55,21 +55,37 @@ struct CalandarView: View {
                    
                     let trigger = UNCalendarNotificationTrigger(dateMatching: pickTime, repeats: true)
                     
-                    let triggerLoop = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
-                
                     let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                     
-                    let requestLoop = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: triggerLoop)
-                   
-                   
+                    let triggerLoop = UNTimeIntervalNotificationTrigger(timeInterval: 13, repeats: false)
                     
-                    if(countOff <= 0){
-                        UNUserNotificationCenter.current().add(request)
-                        while (alarmCount <= 3){
-                            UNUserNotificationCenter.current().add(requestLoop)
+                    let requestLoop = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: triggerLoop)
+                    
+                        let triggerLooptwo = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+                        
+                        let requestLooptwo = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: triggerLooptwo)
+                       
+                    
+                    while(alarmCount == 0){
+                        let currentTime = Date()
+                        if isTimeEqual(currentTime, DatePicked) {
+                            print("The times are equal.")
                             alarmCount += 1
                         }
                     }
+                    if(countOff <= 0){
+                        UNUserNotificationCenter.current().add(request)
+                        
+                       if (alarmCount >= 1){
+                           UNUserNotificationCenter.current().add(requestLoop)
+                        }
+                    }
+                    
+                    if(countSnooze >= 1){
+                        UNUserNotificationCenter.current().add(requestLooptwo)
+                    }
+                    
+                   
                     
                     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
                         switch response.actionIdentifier {
@@ -82,6 +98,15 @@ struct CalandarView: View {
                         }
                         completionHandler()
                     }
+                    
+                    func isTimeEqual(_ date1: Date, _ date2: Date) -> Bool {
+                            let calendar = Calendar.current
+                            let components1 = calendar.dateComponents([.hour, .minute], from: date1)
+                            let components2 = calendar.dateComponents([.hour, .minute], from: date2)
+                            
+                            return components1.hour == components2.hour && components1.minute == components2.minute
+                        }
+                    
                 }.font(.title)
                     
                
