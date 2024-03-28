@@ -23,6 +23,7 @@
 		47BFD4872B96875A0092D56E /* Searchbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47BFD4862B96875A0092D56E /* Searchbar.swift */; };
 		47D83A352BA884DA0038A862 /* alarmSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A342BA884DA0038A862 /* alarmSound.wav */; };
 		47D83A3B2BA88A7E0038A862 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A3A2BA88A7E0038A862 /* alarm.wav */; };
+		47D83A3D2BACB9540038A862 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A3C2BACB9540038A862 /* TasksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		47D83A322BA7D03A0038A862 /* 233645__zanox__alarm-clock-digital.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "233645__zanox__alarm-clock-digital.caf"; path = "../../233645__zanox__alarm-clock-digital.caf"; sourceTree = "<group>"; };
 		47D83A342BA884DA0038A862 /* alarmSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = alarmSound.wav; path = ../../../alarmSound.wav; sourceTree = "<group>"; };
 		47D83A3A2BA88A7E0038A862 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = alarm.wav; path = ../../../alarm.wav; sourceTree = "<group>"; };
+		47D83A3C2BACB9540038A862 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				47BFD47D2B8AC2220092D56E /* AppDelegate.swift */,
 				47BFD47F2B8D4E0C0092D56E /* MapView.swift */,
 				47BFD4862B96875A0092D56E /* Searchbar.swift */,
+				47D83A3C2BACB9540038A862 /* TasksView.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
 				47BFD4852B9682100092D56E /* README.md */,
@@ -301,6 +304,7 @@
 				47BFD47E2B8AC2220092D56E /* AppDelegate.swift in Sources */,
 				47BFD47A2B843E540092D56E /* OptionsScene.swift in Sources */,
 				47BFD4762B842E2C0092D56E /* OptionsView.swift in Sources */,
+				47D83A3D2BACB9540038A862 /* TasksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
