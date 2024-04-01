@@ -26,7 +26,7 @@ struct ContentView: View {
                 self.toggleOptionsName()
             }
             .padding(.leading, 275.0)
-            .padding(.top, -35.0)
+           // .padding(.top, -35.0)
             .padding(.bottom)
             
             if(showingOptions == true){
