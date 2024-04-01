@@ -21,14 +21,13 @@ struct ContentView: View {
         }
     var body: some View {
         VStack() {
-            HStack(){
-                Button(OptionsName) {
-                    self.showingOptions.toggle()
-                    self.toggleOptionsName()
-                }
-                .padding([.leading, .bottom])
-                Spacer()
+            Button(OptionsName) {
+                self.showingOptions.toggle()
+                self.toggleOptionsName()
             }
+            .padding(.leading, 275.0)
+            .padding(.top, -35.0)
+            .padding(.bottom)
             
             if(showingOptions == true){
                 OptionsView()

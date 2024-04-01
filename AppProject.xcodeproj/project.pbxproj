@@ -24,6 +24,7 @@
 		47D83A352BA884DA0038A862 /* alarmSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A342BA884DA0038A862 /* alarmSound.wav */; };
 		47D83A3B2BA88A7E0038A862 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A3A2BA88A7E0038A862 /* alarm.wav */; };
 		47D83A3D2BACB9540038A862 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A3C2BACB9540038A862 /* TasksView.swift */; };
+		47D83A3F2BB63D2C0038A862 /* SavedTasks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		47D83A342BA884DA0038A862 /* alarmSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = alarmSound.wav; path = ../../../alarmSound.wav; sourceTree = "<group>"; };
 		47D83A3A2BA88A7E0038A862 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = alarm.wav; path = ../../../alarm.wav; sourceTree = "<group>"; };
 		47D83A3C2BACB9540038A862 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
+		47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SavedTasks.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				47D83A342BA884DA0038A862 /* alarmSound.wav */,
 				47D83A3A2BA88A7E0038A862 /* alarm.wav */,
 				47D83A2D2B9928170038A862 /* Info.plist */,
+				47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */,
 				47BFD43E2B7D72560092D56E /* AppProjectApp.swift */,
 				47BFD4402B7D72560092D56E /* ContentView.swift */,
 				47BFD4712B84279F0092D56E /* HomeScene.swift */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				47BFD4462B7D72580092D56E /* Preview Assets.xcassets in Resources */,
+				47D83A3F2BB63D2C0038A862 /* SavedTasks.txt in Resources */,
 				47D83A352BA884DA0038A862 /* alarmSound.wav in Resources */,
 				47D83A3B2BA88A7E0038A862 /* alarm.wav in Resources */,
 				47BFD4432B7D72580092D56E /* Assets.xcassets in Resources */,

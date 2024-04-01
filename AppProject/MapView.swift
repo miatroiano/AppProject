@@ -36,14 +36,14 @@ struct MapView: View {
     
     
     var body: some View {
-            Map(
-                position: $region,bounds: nil, interactionModes: .all, scope: nil
-            ){
-                
+        Map(
+            position: $region,bounds: nil, interactionModes: .all, scope: nil
+        ){
+            
             ForEach(searchResults, id: \.self)
             {result in Marker(item: result)}
         }
-       
+        
         .mapControls {
             MapUserLocationButton()
             MapCompass()
@@ -57,7 +57,7 @@ struct MapView: View {
         }
         
     }
-
+    
 }
 
 #Preview {

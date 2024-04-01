@@ -12,8 +12,8 @@ import MapKit
 struct Searchbar: View {
     @Binding var searchResults: [MKMapItem]
     @State private var searchInput: String = ""
-
-
+    
+    
     func search(for query: String) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = query
@@ -21,8 +21,8 @@ struct Searchbar: View {
         request.region = MKCoordinateRegion(
             center: .home,
             span: MKCoordinateSpan (latitudeDelta: 0.0125, longitudeDelta: 0.0125)
-            )
-
+        )
+        
         Task {
             let search = MKLocalSearch(request: request)
             let response = try? await search.start()

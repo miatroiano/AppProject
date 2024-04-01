@@ -31,9 +31,11 @@ struct OptionsView: View {
                         Text("Option 4")
                     })
                 }
+                
                 .navigationTitle("Options")
                 .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
             }
+          //  .padding(.top, -75.0)
         }
     }
 }
