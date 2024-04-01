@@ -61,6 +61,7 @@ struct CalandarView: View {
                 let triggerSnoozethree = UNTimeIntervalNotificationTrigger(timeInterval: 86, repeats: false)
                 let requestSnoozethree = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: triggerSnoozetwo)
                 
+                
                 while(alarmCount == 0){
                     let currentTime = Date()
                     if isTimeEqual(currentTime, DatePicked) {
@@ -68,14 +69,15 @@ struct CalandarView: View {
                         alarmCount += 1
                     }
                 }
-                if(countOff == 0){
+                if(countOff <= 0){
                     UNUserNotificationCenter.current().add(request)
                     if (alarmCount >= 1){
                         UNUserNotificationCenter.current().add(requestLoop)
                         UNUserNotificationCenter.current().add(requestLooptwo)
                     }
                 }
-                if(countSnooze == 1){
+                
+                if(countSnooze >= 1){
                     countOff += 1
                     UNUserNotificationCenter.current().add(requestSnooze)
                     UNUserNotificationCenter.current().add(requestSnoozetwo)

@@ -23,11 +23,11 @@ struct TasksView: View {
                 List {
                     NavigationLink(destination: HStack(){
                         TextField(Task, text: $Task)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.leading)
                         Stepper("Minuets: \(Time)", value: $Time)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.trailing)
                         
                     },
                                    label: {
@@ -35,11 +35,11 @@ struct TasksView: View {
                     })
                     NavigationLink(destination: HStack(){
                         TextField(Task2, text: $Task2)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.leading)
                         Stepper("Minuets: \(Time2)", value: $Time2)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.leading)
                     },
                                    label: {
                         Text("\(Task2)")
@@ -47,11 +47,11 @@ struct TasksView: View {
                     
                     NavigationLink(destination: HStack(){
                         TextField(Task3, text: $Task3)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.leading)
                         Stepper("Minuets: \(Time3)", value: $Time3)
-                            .padding(.bottom, 700.0)
-                            .padding(.horizontal)
+                            .padding(.bottom, 200.0)
+                            .padding(.trailing)
                     },
                                    label: {
                         Text("\(Task3)")
