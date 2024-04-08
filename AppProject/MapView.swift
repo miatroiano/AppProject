@@ -70,7 +70,7 @@ struct MapView: View {
                 SearchView(searchResults: $searchResults)
             }
             .mapControls {
-                // MapUserLocationButton()
+                MapUserLocationButton()
                 MapCompass()
                 MapScaleView()
             }
