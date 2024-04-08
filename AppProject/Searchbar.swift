@@ -24,6 +24,8 @@ struct Searchbar: View {
         )
         
         Task {
+            
+            
             let search = MKLocalSearch(request: request)
             let response = try? await search.start()
             searchResults = response?.mapItems ?? []

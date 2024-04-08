@@ -25,6 +25,9 @@
 		47D83A3B2BA88A7E0038A862 /* alarm.wav in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A3A2BA88A7E0038A862 /* alarm.wav */; };
 		47D83A3D2BACB9540038A862 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A3C2BACB9540038A862 /* TasksView.swift */; };
 		47D83A3F2BB63D2C0038A862 /* SavedTasks.txt in Resources */ = {isa = PBXBuildFile; fileRef = 47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */; };
+		47D83A432BBE014A0038A862 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A422BBE01490038A862 /* SearchView.swift */; };
+		47D83A452BBE04B70038A862 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A442BBE04B70038A862 /* LocationService.swift */; };
+		47D83A472BBE309E0038A862 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A462BBE309E0038A862 /* LocationModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		47D83A3A2BA88A7E0038A862 /* alarm.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = alarm.wav; path = ../../../alarm.wav; sourceTree = "<group>"; };
 		47D83A3C2BACB9540038A862 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = SavedTasks.txt; sourceTree = "<group>"; };
+		47D83A422BBE01490038A862 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		47D83A442BBE04B70038A862 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		47D83A462BBE309E0038A862 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,7 @@
 				47D83A3A2BA88A7E0038A862 /* alarm.wav */,
 				47D83A2D2B9928170038A862 /* Info.plist */,
 				47D83A3E2BB63D2C0038A862 /* SavedTasks.txt */,
+				47D83A462BBE309E0038A862 /* LocationModel.swift */,
 				47BFD43E2B7D72560092D56E /* AppProjectApp.swift */,
 				47BFD4402B7D72560092D56E /* ContentView.swift */,
 				47BFD4712B84279F0092D56E /* HomeScene.swift */,
@@ -133,7 +140,9 @@
 				47BFD47D2B8AC2220092D56E /* AppDelegate.swift */,
 				47BFD47F2B8D4E0C0092D56E /* MapView.swift */,
 				47BFD4862B96875A0092D56E /* Searchbar.swift */,
+				47D83A422BBE01490038A862 /* SearchView.swift */,
 				47D83A3C2BACB9540038A862 /* TasksView.swift */,
+				47D83A442BBE04B70038A862 /* LocationService.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
 				47BFD4852B9682100092D56E /* README.md */,
@@ -309,6 +318,9 @@
 				47BFD47A2B843E540092D56E /* OptionsScene.swift in Sources */,
 				47BFD4762B842E2C0092D56E /* OptionsView.swift in Sources */,
 				47D83A3D2BACB9540038A862 /* TasksView.swift in Sources */,
+				47D83A472BBE309E0038A862 /* LocationModel.swift in Sources */,
+				47D83A452BBE04B70038A862 /* LocationService.swift in Sources */,
+				47D83A432BBE014A0038A862 /* SearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +488,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ask for location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -506,6 +519,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppProject/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "ask for location";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

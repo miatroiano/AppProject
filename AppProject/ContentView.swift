@@ -6,6 +6,7 @@
 //
 import SwiftUI
 import UserNotifications
+import MapKit
 
 struct ContentView: View {
     @State var showingOptions = false
@@ -21,6 +22,7 @@ struct ContentView: View {
         }
     var body: some View {
         VStack() {
+            
             Button(OptionsName) {
                 self.showingOptions.toggle()
                 self.toggleOptionsName()
@@ -36,12 +38,15 @@ struct ContentView: View {
                 MapView()
                //CalandarView()
             }
-
         }
         Spacer()
         .preferredColorScheme(.light)
+        
+        
     }
 }
+
+
 
 #Preview {
     ContentView()
