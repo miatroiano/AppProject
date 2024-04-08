@@ -106,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				47D83A322BA7D03A0038A862 /* 233645__zanox__alarm-clock-digital.caf */,
+				47BFD4852B9682100092D56E /* README.md */,
 				47BFD43D2B7D72560092D56E /* AppProject */,
 				47BFD44E2B7D72580092D56E /* AppProjectTests */,
 				47BFD4582B7D72580092D56E /* AppProjectUITests */,
@@ -145,7 +146,6 @@
 				47D83A442BBE04B70038A862 /* LocationService.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
-				47BFD4852B9682100092D56E /* README.md */,
 			);
 			path = AppProject;
 			sourceTree = "<group>";
