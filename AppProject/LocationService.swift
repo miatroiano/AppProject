@@ -12,11 +12,14 @@ struct SearchCompletions: Identifiable {
     let id = UUID()
     let title: String
     let subTitle: String
+    let placemark: MKPlacemark?
     var url: URL?
+    
 }
 struct SearchResult: Identifiable, Hashable {
     let id = UUID()
     let location: CLLocationCoordinate2D
+    
 
     static func == (lhs: SearchResult, rhs: SearchResult) -> Bool {
         lhs.id == rhs.id
@@ -32,7 +35,7 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
     private let completer: MKLocalSearchCompleter
 
     var searchDone = [SearchCompletions]()
-
+    
     init(completer: MKLocalSearchCompleter) {
         self.completer = completer
         super.init()
@@ -44,6 +47,7 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
         completer.queryFragment = queryFragment
     }
 
+    
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchDone = completer.results.map { completion in
                     // Get the private _mapItem property
@@ -52,9 +56,11 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
                     return .init(
                         title: completion.title,
                         subTitle: completion.subtitle,
+                        placemark: mapItem?.placemark,
                         url: mapItem?.url
                     )
                 }
+        
     }
     func search(with query: String, coordinate: CLLocationCoordinate2D? = nil) async throws -> [SearchResult] {
             let mapKitRequest = MKLocalSearch.Request()
@@ -73,4 +79,5 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
                 return .init(location: location)
             }
         }
+
 }

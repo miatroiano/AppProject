@@ -19,15 +19,16 @@ struct MapView: View {
     @State var DateTD: Date = Date()
     @State private var searchResults = [SearchResult]()
     @State private var searchInput: String = ""
-    @State private var position = MapCameraPosition.userLocation(fallback: .automatic)
+    @State private var position = MapCameraPosition.automatic
     @State private var selectedLocation: SearchResult?
-    @State private var isSheetPresented: Bool = true
+    @State private var isSheetPresented: Bool = false
     @State private var isLocPresented: Bool = false
     @State private var region = MapCameraPosition.region(MKCoordinateRegion(
         center: .home,
         span: .init(latitudeDelta: 0.2, longitudeDelta: 0.2))
     )
     @State private var selectedPlacemark: SearchResult?
+
     var body: some View {
         VStack{
             Text(Date.now, format: .dateTime.day().month().year().weekday())
@@ -36,9 +37,10 @@ struct MapView: View {
             Text(Date.now, format: .dateTime.hour().minute())
                 .font(.system(size: 24))
                 .bold()
+            SearchView(searchResults: $searchResults, selected: $isSheetPresented)
+                .padding([.leading, .bottom])
         }
         ZStack{
-            
             Map(position: $position,bounds: nil, interactionModes: .all, selection: $selectedPlacemark, scope: nil)
             {
                 UserAnnotation()
@@ -49,26 +51,31 @@ struct MapView: View {
                         }
                         .tag(result)
                     }.tag(result)
+                    
                 }
+               
+                
             }
             .onAppear{
                 manager.requestWhenInUseAuthorization()
             }
             .ignoresSafeArea()
-            .onChange(of: selectedLocation) {
-                isSheetPresented = selectedLocation == nil
-            }
             .onChange(of: selectedPlacemark) {
-                isLocPresented = true
+                isSheetPresented = true
+                
+                
             }
+//            .onChange(of: selectedPlacemark) {
+//                isLocPresented = true
+//            }
             .onChange(of: searchResults) {
                 if let firstResult = searchResults.first, searchResults.count == 1 {
                     selectedLocation = firstResult
                 }
             }
-            .sheet(isPresented: $isSheetPresented) {
-                SearchView(searchResults: $searchResults)
-            }
+//            .sheet(isPresented: $isSheetPresented) {
+//                SearchView(searchResults: $searchResults)
+//            }
             .mapControls {
                 MapUserLocationButton()
                 MapCompass()
