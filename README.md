@@ -1,4 +1,5 @@
 #  Read Me 
+this app is a planning tool, for getting to places on time, 
 make sure xcode is on your computer
 
 clone repo to your local computer, and open the project in xcode. 
@@ -11,3 +12,5 @@ now run the project, you must go into your settings, in general, VPN and Device 
 once that is done now, you canrun the project.
 
 once app is running it will ask to send notifications, you must press Yes, or else the app does not work the way it is designed. 
+
+it will also send a request notification for location preffrences, which you need to press while using.
