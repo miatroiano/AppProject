@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import MapKit
+import CoreLocation
 
 class LocationModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     private var locationManager = CLLocationManager()

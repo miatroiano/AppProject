@@ -9,14 +9,18 @@ import Foundation
 import SwiftUI
 import MapKit
 
-
 struct SearchView: View {
+    private let startingPoint = CLLocationCoordinate2D(
+            latitude: 40.83657722488077,
+            longitude: 14.306896671048852
+        )
     @State private var search: String = ""
     @State private var searchInput: String = ""
     @State private var locationService = LocationService(completer: .init())
+    @State private var selectedResult: MKMapItem?
+    @State private var route: MKRoute?
     @Binding var searchResults: [SearchResult]
     @Binding var selected: Bool
-    
     var body: some View {
         VStack {
             HStack {
@@ -36,7 +40,6 @@ struct SearchView: View {
         .sheet(isPresented: $selected) {
             List {
                 ForEach(locationService.searchDone) { completion in
-                    
                     VStack(alignment: .leading, spacing: 4) {
                         Text(completion.title)
                             .font(.headline)
@@ -51,26 +54,24 @@ struct SearchView: View {
                         Button("open in maps"){
                             if let opens = completion.placemark {
                                 let mapitem = MKMapItem(placemark: opens)
+                                selectedResult = mapitem
                                 mapitem.openInMaps()
                             }
                         }
-                        
+//                        Button("get Directions"){
+//                            if let opens = completion.placemark {
+//                                let mapitemD = MKMapItem(placemark: opens)
+//                            }
+//                        }
                     }
-                    
                 }
-                
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
         }
-        
-        //.padding()
         .interactiveDismissDisabled()
-        // .presentationDetents([.height(200), .large])
         .presentationBackgroundInteraction(.enabled(upThrough: .large))
     }
-    
-    
 }
 
 

@@ -12,7 +12,8 @@ struct SearchCompletions: Identifiable {
     let id = UUID()
     let title: String
     let subTitle: String
-    let placemark: MKPlacemark?
+    var location: CLLocationCoordinate2D?
+    var placemark: MKPlacemark?
     var url: URL?
     
 }
@@ -56,6 +57,7 @@ class LocationService: NSObject, MKLocalSearchCompleterDelegate {
                     return .init(
                         title: completion.title,
                         subTitle: completion.subtitle,
+                        location:mapItem?.placemark.coordinate,
                         placemark: mapItem?.placemark,
                         url: mapItem?.url
                     )
