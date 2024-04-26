@@ -27,6 +27,7 @@
 		47D83A452BBE04B70038A862 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A442BBE04B70038A862 /* LocationService.swift */; };
 		47D83A472BBE309E0038A862 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A462BBE309E0038A862 /* LocationModel.swift */; };
 		47D83A7F2BC8C79B0038A862 /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A7E2BC8C79B0038A862 /* LocationView.swift */; };
+		47D83A8E2BDC0D7D0038A862 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D83A8D2BDC0D7D0038A862 /* TimerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		47D83A442BBE04B70038A862 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		47D83A462BBE309E0038A862 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		47D83A7E2BC8C79B0038A862 /* LocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		47D83A8D2BDC0D7D0038A862 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				47D83A442BBE04B70038A862 /* LocationService.swift */,
 				47BFD4422B7D72580092D56E /* Assets.xcassets */,
 				47BFD4442B7D72580092D56E /* Preview Content */,
+				47D83A8D2BDC0D7D0038A862 /* TimerView.swift */,
 			);
 			path = AppProject;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D83A8E2BDC0D7D0038A862 /* TimerView.swift in Sources */,
 				47BFD4722B84279F0092D56E /* HomeScene.swift in Sources */,
 				47BFD4802B8D4E0C0092D56E /* MapView.swift in Sources */,
 				47BFD4412B7D72560092D56E /* ContentView.swift in Sources */,

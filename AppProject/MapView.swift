@@ -37,6 +37,7 @@ struct MapView: View {
             Text(Date.now, format: .dateTime.hour().minute())
                 .font(.system(size: 24))
                 .bold()
+            TimerView()
             SearchView(searchResults: $searchResults, selected: $isSheetPresented)
                 .padding([.leading, .bottom])
         }
