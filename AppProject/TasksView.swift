@@ -26,15 +26,11 @@ struct TasksView: View {
             NavigationView {
                 List {
                     NavigationLink(destination: VStack(){
+                        
                         TextField(Task, text: $Task)
-                            .padding(.bottom, 200.0)
-                            .padding(.leading)
+                            .padding(.top)
                         Stepper("Hours: \(TimeH)", value: $TimeH)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
                         Stepper("Minuets: \(TimeM)", value: $TimeM)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
                         
                     },
                                    label: {
@@ -42,15 +38,9 @@ struct TasksView: View {
                     })
                     NavigationLink(destination: VStack(){
                         TextField(Task2, text: $Task2)
-                            .padding(.bottom, 200.0)
-                            .padding(.leading)
+                            .padding(.top)
                         Stepper("Hours: \(TimeH2)", value: $TimeH2)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
                         Stepper("Minuets: \(TimeM2)", value: $TimeM2)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
-                        
                     },
                                    label: {
                         Text("\(Task2)")
@@ -58,15 +48,9 @@ struct TasksView: View {
                     
                     NavigationLink(destination: VStack(){
                         TextField(Task3, text: $Task3)
-                            .padding(.bottom, 200.0)
-                            .padding(.leading)
+                            .padding(.top)
                         Stepper("Hours: \(TimeH3)", value: $TimeH3)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
                         Stepper("Minuets: \(TimeM3)", value: $TimeM3)
-                            .padding(.bottom, 200.0)
-                            .padding(.trailing)
-                        
                     },
                                    label: {
                         Text("\(Task3)")
@@ -78,7 +62,8 @@ struct TasksView: View {
                             NotificationCenter.default.post(name: .init("TimerUpdated"), object: nil)
                         }
                     }
-            }
+                    
+                }
             
             .navigationTitle("My Tasks")
             .navigationBarTitleDisplayMode(/*@START_MENU_TOKEN@*/.automatic/*@END_MENU_TOKEN@*/)
