@@ -10,7 +10,7 @@ import SwiftUI
 struct TimerView: View {
     @AppStorage("remainingTime") var remainingTime: Int = 0
     @State private var timer: Timer? = nil
-    @State private var timerIsActive = false // State to control timer activity
+    @State private var timerIsActive = false
 
     var body: some View {
         VStack {
@@ -19,7 +19,7 @@ struct TimerView: View {
                 .bold()
 
             if timerIsActive {
-                Button("Stop Timer") {
+                Button("Stop") {
                     stopTimer()
                 }
                 .padding()
@@ -28,7 +28,7 @@ struct TimerView: View {
                 .clipShape(Capsule())
                 .controlSize(/*@START_MENU_TOKEN@*/.mini/*@END_MENU_TOKEN@*/)
             } else {
-                Button("Start Timer") {
+                Button("Start") {
                     startTimer()
                 }
                 .padding()
@@ -76,5 +76,5 @@ struct TimerView: View {
     }
 }
 #Preview {
-    TasksView()
+    TimerView()
 }

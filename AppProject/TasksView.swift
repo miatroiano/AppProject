@@ -71,20 +71,13 @@ struct TasksView: View {
                                    label: {
                         Text("\(Task3)")
                     })
-                    Button("Set Timer and Go to Countdown") {
-                        // Convert hours and minutes to seconds and save in AppStorage
+                    Button("Set Time") {
                         let newTime = (TimeH * 3600) + (TimeM * 60) + (TimeH2 * 3600) + (TimeM2 * 60) + (TimeH3 * 3600) + (TimeM3 * 60)
                         if newTime != remainingTime {
                             remainingTime = newTime
                             NotificationCenter.default.post(name: .init("TimerUpdated"), object: nil)
                         }
                     }
-                    .foregroundColor(.white)
-                    .padding()
-                    .background(Color.blue)
-                    .clipShape(Capsule())
-                
-                
             }
             
             .navigationTitle("My Tasks")

@@ -16,6 +16,7 @@ struct SearchView: View {
     @State private var locationService = LocationService(completer: .init())
     @Binding var searchResults: [SearchResult]
     @Binding var selected: Bool
+    @Binding var showRoute: Bool
     
     var body: some View {
         VStack {
@@ -53,6 +54,9 @@ struct SearchView: View {
                                 let mapitem = MKMapItem(placemark: opens)
                                 mapitem.openInMaps()
                             }
+                        }
+                        Button("show route"){
+                            showRoute.toggle()
                         }
                         
                     }
