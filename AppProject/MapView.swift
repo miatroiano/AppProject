@@ -33,7 +33,6 @@ struct MapView: View {
     @State private var route: MKRoute?
     @State private var routeDestination: MKMapItem?
     @State private var travelTime: TimeInterval?
-    @State private var timeEst: TimeInterval = 0
     @State private var transportType = MKDirectionsTransportType.automobile
     
     var body: some View {
@@ -45,14 +44,8 @@ struct MapView: View {
                 .font(.system(size: 24))
                 .bold()
             TimerView()
-            SearchView(searchResults: $searchResults, selected: $isSheetPresented, showRoute: $showRoute)
+            SearchView(searchResults: $searchResults, selected: $isSheetPresented, showRoute: $showRoute, travelTime: $travelTime, selectedPlacemark: $selectedPlacemark)
                 .padding([.leading, .bottom])
-            //Text(timeEst.formatted())
-//            if routeDisplayed{
-//                Button("clear route"){
-//                    removeRoute()
-//                }
-//            }
         }
         ZStack{
             Map(position: $position,bounds: nil, interactionModes: .all, selection: $selectedPlacemark, scope: nil)
@@ -77,11 +70,8 @@ struct MapView: View {
                 if let route, routeDisplayed{
                     MapPolyline(route.polyline)
                         .stroke(.blue, lineWidth: 6)
-                    //timeEst = travelTime
                 }
-                
             }
-            
             .onAppear{
                 manager.requestWhenInUseAuthorization()
             }
@@ -108,6 +98,7 @@ struct MapView: View {
                 }
             }
             .onChange(of: showRoute) {
+                isSheetPresented = false
                 selectedPlacemark = nil
                 if showRoute {
                     withAnimation {

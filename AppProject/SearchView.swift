@@ -17,6 +17,15 @@ struct SearchView: View {
     @Binding var searchResults: [SearchResult]
     @Binding var selected: Bool
     @Binding var showRoute: Bool
+    @Binding var travelTime: TimeInterval?
+    @Binding var selectedPlacemark: SearchResult?
+    var travelTimes: String? {
+        guard let travelTime else { return nil }
+        let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .abbreviated
+        formatter.allowedUnits = [.hour, .minute]
+        return formatter.string(from: travelTime)
+    }
     
     var body: some View {
         VStack {
@@ -35,47 +44,33 @@ struct SearchView: View {
             locationService.update(queryFragment: searchInput)
         }
         .sheet(isPresented: $selected) {
-            List {
-                ForEach(locationService.searchDone) { completion in
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(completion.title)
+            if let placemark = selectedPlacemark {
+                VStack {
+                    Text(placemark.name)
+                        .font(.headline)
+                        .fontDesign(.rounded)
+                    Text(placemark.subTitle)
+                        .font(.headline)
+                        .fontDesign(.rounded)
+                    Text("Location: \(placemark.location.latitude), \(placemark.location.longitude)")
+                    Button("Show Route") {
+                        showRoute.toggle()
+                    }
+                    if let travelTimes {
+                        Text(" time: \(travelTimes)")
                             .font(.headline)
                             .fontDesign(.rounded)
-                        Text(completion.subTitle)
-                        Button(action: { }) {
-                            if let url = completion.url {
-                                Link(url.absoluteString, destination: url)
-                                    .lineLimit(1)
-                            }
-                        }
-                        Button("open in maps"){
-                            if let opens = completion.placemark {
-                                let mapitem = MKMapItem(placemark: opens)
-                                mapitem.openInMaps()
-                            }
-                        }
-                        Button("show route"){
-                            showRoute.toggle()
-                        }
-                        
                     }
-                    
+                    Button("open in maps"){
+                        if let opens = placemark.placemark {
+                            let mapitem = MKMapItem(placemark: opens)
+                            mapitem.openInMaps()
+                        }
+                    }
                 }
-                
+                .presentationDetents([.height(300)])
             }
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
         }
-        
-        //.padding()
         .interactiveDismissDisabled()
-        // .presentationDetents([.height(200), .large])
-        .presentationBackgroundInteraction(.enabled(upThrough: .large))
     }
-    
-    
 }
-
-
-

@@ -11,13 +11,11 @@ struct TimerView: View {
     @AppStorage("remainingTime") var remainingTime: Int = 0
     @State private var timer: Timer? = nil
     @State private var timerIsActive = false
-
     var body: some View {
         VStack {
             Text(timeString(time: remainingTime))
                 .font(.system(size: 24))
                 .bold()
-
             if timerIsActive {
                 Button("Stop") {
                     stopTimer()
@@ -67,14 +65,10 @@ struct TimerView: View {
         stopTimer()
         remainingTime = UserDefaults.standard.integer(forKey: "remainingTime")
     }
-
     func timeString(time: Int) -> String {
         let hours = time / 3600
         let minutes = (time % 3600) / 60
         let seconds = (time % 3600) % 60
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
-}
-#Preview {
-    TimerView()
 }
